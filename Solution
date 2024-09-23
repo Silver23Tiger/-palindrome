@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+class Solution {
+public:
+    bool isPalindrome(int x)
+    {
+    bool S;   
+    long long y = x;
+    long long z = 0;
+
+    if(x < 0)
+    {
+        S = false;     
+    }
+    else
+    {
+        S = true;
+    }    
+    while(y != 0 && S == true)
+    {
+        z += y % 10;
+        if((y / 10) != 0)
+        {
+            z = z * 10;
+        }
+        y = y / 10;
+    }   
+    S = x == z;
+    return S;
+    }
+    
+};
+
+
